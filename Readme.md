@@ -1,21 +1,26 @@
-🚀 LLM + RAG-Based Function Execution API
-🌟 Project Overview
-This project implements an advanced Function Execution API that leverages LLM-based prompt understanding and RAG (Retrieval-Augmented Generation) to dynamically execute predefined system automation tasks.
-It takes natural language user prompts, performs semantic search in a vector database (FAISS), and generates Python code dynamically for executing the relevant function.
+Here's an enhanced, more attractive version of your **README.md** with a professional and visually appealing structure. It also includes placeholders where you can insert your Postman screenshots.  
 
-🔧 Features
-💡 Function Retrieval: Search and retrieve the most relevant system function based on user queries.
+---
 
-🧠 Semantic Search with SentenceTransformer: User queries are embedded and compared with stored function descriptions for matching.
+# **🚀 LLM + RAG-Based Function Execution API**  
 
-🛠 Dynamic Python Code Generator: Creates Python scripts on the fly to execute the retrieved function.
+## **🌟 Project Overview**  
+This project implements an advanced **Function Execution API** that leverages **LLM-based prompt understanding** and **RAG (Retrieval-Augmented Generation)** to dynamically execute predefined system automation tasks.  
+It takes natural language user prompts, performs **semantic search** in a **vector database (FAISS)**, and generates Python code dynamically for executing the relevant function.
 
-⚡ FastAPI Integration: Provides a simple API endpoint to interact with the function execution system.
+---
 
-📁 Directory Structure
-bash
-Copy
-Edit
+## **🔧 Features**  
+- 💡 **Function Retrieval**: Search and retrieve the most relevant system function based on user queries.  
+- 🧠 **Semantic Search with SentenceTransformer**: User queries are embedded and compared with stored function descriptions for matching.  
+- 🛠 **Dynamic Python Code Generator**: Creates Python scripts on the fly to execute the retrieved function.  
+- ⚡ **FastAPI Integration**: Provides a simple API endpoint to interact with the function execution system.  
+
+---
+
+## **📁 Directory Structure**  
+
+```
 project-root/
 │
 ├── automation_functions/
@@ -33,154 +38,142 @@ project-root/
 ├── main.py                         # Entry point to run the FastAPI server
 ├── requirements.txt                # List of dependencies
 └── README.md                       # Project documentation (this file)
-🚀 API Documentation
-The FastAPI server exposes the following endpoint:
+```
 
-POST /execute
-URL: http://127.0.0.1:8000/execute
+---
 
-Method: POST
+## **🚀 API Documentation**  
+The FastAPI server exposes the following endpoint:  
 
-Headers:
+### **POST /execute**  
+- **URL:** `http://127.0.0.1:8000/execute`  
+- **Method:** POST  
+- **Headers:**  
+  - `Content-Type: application/json`  
+- **Request Body (JSON)**  
+  ```json  
+  {  
+    "prompt": "Open Chrome browser"  
+  }  
+  ```  
 
-Content-Type: application/json
-
-Request Body (JSON)
-
-json
-Copy
-Edit
-{  
-  "prompt": "Open Chrome browser"  
-}  
-🛠 Sample API Response
-json
-Copy
-Edit
+### **🛠 Sample API Response**  
+```json  
 {  
   "function": "open_chrome",  
   "code": "Generated Python code for executing the function",  
   "description": "Open Google Chrome browser"  
 }  
-📝 How to Set Up and Run Locally
-Follow these steps to set up and run the API server on your local machine:
+```  
 
-Step 1: Clone the Repository
-bash
-Copy
-Edit
+---
+
+## **📝 How to Set Up and Run Locally**  
+
+Follow these steps to set up and run the API server on your local machine:  
+
+### **Step 1: Clone the Repository**  
+```bash  
 git clone <repo-url>  
 cd <repo-folder>  
-Step 2: Install Dependencies
-Create a Virtual Environment (Optional but Recommended)
+```  
 
-bash
-Copy
-Edit
-python -m venv env  
-source env/bin/activate   # On Linux/MacOS  
-env\Scripts\activate      # On Windows  
-Install Required Packages
+### **Step 2: Install Dependencies**  
+1. **Create a Virtual Environment (Optional but Recommended)**  
+   ```bash  
+   python -m venv env  
+   source env/bin/activate   # On Linux/MacOS  
+   env\Scripts\activate      # On Windows  
+   ```  
 
-bash
-Copy
-Edit
-pip install -r requirements.txt  
-Step 3: Start the FastAPI Server
-bash
-Copy
-Edit
+2. **Install Required Packages**  
+   ```bash  
+   pip install -r requirements.txt  
+   ```  
+
+### **Step 3: Start the FastAPI Server**  
+```bash  
 python main.py  
-You should see output indicating the server is running:
-
-pgsql
-Copy
-Edit
+```  
+You should see output indicating the server is running:  
+```
 INFO:     Started server process [12345]  
 INFO:     Application startup complete.  
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)  
-🚀 Using the API with Postman
-Step 1: Open Postman and Create a New Request
-Set the Method to POST
+```  
 
-Enter the URL: http://127.0.0.1:8000/execute
+---
 
-Go to the Body Tab:
+## **🚀 Using the API with Postman**  
 
-Select raw input.
+### **Step 1: Open Postman and Create a New Request**  
+1. **Set the Method to POST**  
+2. **Enter the URL:** `http://127.0.0.1:8000/execute`  
+3. **Go to the Body Tab:**  
+   - Select **raw** input.  
+   - Choose **JSON** format.  
+   - Enter the following request body:  
+   ```json  
+   {  
+     "prompt": "Retrieve system information"  
+   }  
+   ```  
+4. **Click Send**  
 
-Choose JSON format.
+---
 
-Enter the following request body:
+## **📸 Postman Screenshots (Add These Below)**  
 
-json
-Copy
-Edit
-{  
-  "prompt": "Retrieve system information"  
-}  
-Click Send
+1. **Request Setup Screenshot:**  
+   *(Insert a screenshot of your Postman request setup here, with the URL, method, headers, and body visible.)*  
 
-📸 Postman Screenshots 
-Request Setup Screenshot:
-Below are some screenshots showing the API usage and responses:
+2. **Response Screenshot:**  
+   *(Insert a screenshot of the API response here.)*  
 
-- **Opening Chrome:**
-  ![Open Chrome](Screenshots\open_chrome.png)
+---
 
-- **Opening Calculator:**
-  ![Open Calculator](Screenshots\open_calculator.png)
+## **📚 Predefined Functions**  
 
-- **Getting System Info:**
-  ![Get System Info](Screenshots\get_system_info.png)
+Here are the functions currently registered in the system:  
 
-- **Opening Notepad:**
-  ![Open Notepad](Screenshots\open_notepad.png)
+| **Function Name**     | **Description**                       | **Category**              |  
+|-----------------------|---------------------------------------|---------------------------|  
+| `open_chrome`         | Open Google Chrome browser            | Application Control       |  
+| `open_calculator`     | Open system calculator                | Application Control       |  
+| `open_notepad`        | Open Notepad (text editor)            | Application Control       |  
+| `get_system_info`     | Retrieve system performance metrics   | System Monitoring         |  
+| `run_shell_command`   | Execute arbitrary shell commands      | Command Execution         |  
 
-- **Running Shell Command:**
-  ![Run Shell Command](Screenshots\run_shell_command.png)
+---
 
+## **🌐 Tech Stack**  
+- **FastAPI**: API framework  
+- **Uvicorn**: ASGI server to run FastAPI  
+- **SentenceTransformer**: Generates embeddings from user prompts  
+- **FAISS**: High-performance similarity search for vector embeddings  
+- **psutil**: Provides system performance metrics  
 
-📚 Predefined Functions
-Here are the functions currently registered in the system:
+---
 
-Function Name	Description	Category
-open_chrome	Open Google Chrome browser	Application Control
-open_calculator	Open system calculator	Application Control
-open_notepad	Open Notepad (text editor)	Application Control
-get_system_info	Retrieve system performance metrics	System Monitoring
-run_shell_command	Execute arbitrary shell commands	Command Execution
-🌐 Tech Stack
-FastAPI: API framework
+## **💡 Future Enhancements**  
+- Add more automation functions (e.g., file operations, internet search).  
+- Implement session-based tracking to improve prompt understanding over time.  
+- Enhance logging, error handling, and API security.  
 
-Uvicorn: ASGI server to run FastAPI
+---
 
-SentenceTransformer: Generates embeddings from user prompts
+## **📜 License**  
+This project is licensed under the **MIT License**.  
 
-FAISS: High-performance similarity search for vector embeddings
+---
 
-psutil: Provides system performance metrics
+## **🤝 Contributing**  
+We welcome contributions! To contribute:  
+1. Fork the repository.  
+2. Create a new branch (`git checkout -b feature-branch`).  
+3. Commit your changes (`git commit -m "Added a new feature"`).  
+4. Push to the branch (`git push origin feature-branch`).  
+5. Open a pull request.  
 
-💡 Future Enhancements
-Add more automation functions (e.g., file operations, internet search).
-
-Implement session-based tracking to improve prompt understanding over time.
-
-Enhance logging, error handling, and API security.
-
-📜 License
-This project is licensed under the MIT License.
-
-🤝 Contributing
-We welcome contributions! To contribute:
-
-Fork the repository.
-
-Create a new branch (git checkout -b feature-branch).
-
-Commit your changes (git commit -m "Added a new feature").
-
-Push to the branch (git push origin feature-branch).
-
-Open a pull request.
+---
 
